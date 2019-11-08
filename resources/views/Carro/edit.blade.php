@@ -1,3 +1,5 @@
+{{-- resources/views/admin/dashboard.blade.php --}}
+
 @extends('adminlte::page')
 
 @section('title', 'Locadora de carro')

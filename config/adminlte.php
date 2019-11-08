@@ -143,6 +143,7 @@ return [
                 [
                     'text' => 'Incluir Carro',
                     'icon' => 'fa fa-fw fa-plus',
+                    'route' => 'carros.create',
                 ],
             ],
         ],
