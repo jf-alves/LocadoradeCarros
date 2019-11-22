@@ -9,61 +9,84 @@
 @stop
 
 @section('content')
+<form action="{{route('carros.update',$carro->id)}}" method="post" enctype="multipart/form-data">
+    {{csrf_field()}}
+    <input type="hidden" name="_method" value="PUT">
     <div class="panel panel-default">
 
+
       <div class="panel-heading">
-        <i class="fas fa-fx fa-user">Tela de alteração de dados</i>
+        <i class="fas fa-fx fa-user"></i>Tela de alteração de dados
       </div>
 
       <div class="panel-body">
-        <form action="{{route('carros.update',$carro->id)}}" method="post" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <input type="hidden" name="_method" value="PUT">
+    
 
-          <div class="form-group">
-            <label for="marca">Marca <span class="text-red">*
-            </span></label>
-            <input type="text" name="marca" id="marca" class="form-control" value="{{$carro->marca}}">
-          </div>
-
-          <div class="form-group">
-            <label for="modelo">Modelo <span class="text-red">*
-            </span></label>
-            <input type="text" name="modelo" id="modelo" class="form-control" value="{{$carro->modelo}}">
-          </div>
-
-          <div class="form-group">
-            <label for="cor">Cor </label>
-            <input type="text" name="cor" id="cor" class="form-control" value="{{$carro->cor}}">
-          </div>
-
-          <div class="form-group">
-            <label for="qtPorta">Portas <span class="text-red">*
-            </span></label>
-            <input type="numeric" name="qtPorta" id="qtPorta" class="form-control" value="{{$carro->qtPorta}}">
-          </div>
-
-          <div class="form-group">
-            <label for="ano">Ano <span class="text-red">*
-            </span></label>
-            <input type="numeric" name="ano" id="ano" class="form-control" value="{{$carro->ano}}">
-          </div>
-
-          <div class="form-group">
-            <label for="qtCarro">Quantidade de carros <span class="text-red">*
-            </span></label>
-            <input type="numeric" name="qtCarro" id="qtCarro" class="form-control" value="{{$carro->qtCarro}}">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="marca">Marca <span class="text-red">*
+              </span></label>
+              <input type="text" name="marca" id="marca" class="form-control" required value="{{$carro->marca}}">
+            </div>
           </div>
           
-          <a href="{{route('carros.index')}}" class="btn btn-default"><i class="fas fa-reply"></i> Voltar</a>
+          <div class="row">
+            <div class="form-group col-md-2">
+              <label for="creci">Modelo <span class="text-red">*
+              </span></label>
+              <input type="text" name="modelo" id="modelo" class="form-control" required value="{{$carro->modelo}}">
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label for="fone">Cor </label>
+              <input type="text" name="cor" id="cor" class="form-control" required value="{{$carro->cor}}">
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="email">Quantidade de portas <span class="text-red">*
+              </span></label>
+              <input type="numeric" name="qtPorta" id="qtPorta" class="form-control" required value="{{$carro->qtPorta}}">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="email">Ano <span class="text-red">*
+              </span></label>
+              <input type="numeric" name="ano" id="ano" class="form-control" required value="{{$carro->ano}}">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="email">Foto <span class="text-red">*
+              </span></label>
+              <input type="image" name="foto" id="foto" class="form-control" required value="{{$carro->foto}}">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="email">Quantidade de carro <span class="text-red">*
+              </span></label>
+              <input type="numeric" name="qtCarro" id="qtCarro" class="form-control" required value="{{$carro->foto}}">
+            </div>
+          </div>
+                    
+            
+      </div>  
+      <div class="panel-footer">
+         <a href="{{route('carros.index')}}" class="btn btn-default"><i class="fas fa-reply"></i> Voltar</a>
           <button type="submit" class="btn btn-success">
             <i class="fas fa-save"></i> Salvar
-          </button>
-          
-        </form>     
-      </div>   
-    
+          </button>      
+      </div>     
     </div>
+  </form> 
 @stop
 
 @section('css')

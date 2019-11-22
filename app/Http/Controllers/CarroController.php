@@ -58,9 +58,10 @@ class CarroController extends Controller
      * @param  \App\Carro  $carro
      * @return \Illuminate\Http\Response
      */
-    public function show(Carro  $carro)
+    public function show($id)
     {
-        //
+        $carro = Carro::where('id', '=' , $id)->first();
+        return view('carro.show',compact('carro'));
     }
 
     /**
@@ -71,8 +72,8 @@ class CarroController extends Controller
      */
     public function edit($id)
     {
-        //$carro = Carro::find($id)
-        //return view('carro.edit',compact('carro'));
+        $carro = Carro::where('id', '=' , $id)->first();
+        return view('carro.edit',compact('carro'));
     }
 
     /**
@@ -82,9 +83,15 @@ class CarroController extends Controller
      * @param  \App\Carro  $carro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Carro $carro)
+    public function update(Request $request, $id)
     {
-        Carro::update($request->all());
+        $carro = Carro::where('id', '=' , $id)->first();
+        $carro->marca = $request->get('marca');
+        $carro->modelo = $request->get('modelo');
+        $carro->cor = $request->get('cor');
+        $carro->qtPorta = $request->get('qtPorta');
+        $carro->ano = $request->get('ano');
+        $carro->qtCarro = $request->get('qtCarro');
 
         return redirect()->route('carros.index');
     }
@@ -95,9 +102,11 @@ class CarroController extends Controller
      * @param  \App\Carro  $carro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Corretor $corretor)
+    public function destroy($id)
     {
-        //
+        $carro = Carro::where('id', '=' , $id)->first();
+        $carro->delete();
+        return redirect()->route('carros.index');
     }
 }
 

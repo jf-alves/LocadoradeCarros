@@ -41,7 +41,7 @@
                     <td>
 
                         <!--Botão de detalhe do registro  -->
-                        <a href="{{ route('carros.show', $carro) }}" class="btn btn-xs btn-primary">
+                        <a href="{{ route('carros.show', $carro->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
                         <!--Botão de edição do registro  -->
