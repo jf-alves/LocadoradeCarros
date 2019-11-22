@@ -93,6 +93,8 @@ class CarroController extends Controller
         $carro->ano = $request->get('ano');
         $carro->qtCarro = $request->get('qtCarro');
 
+        $carro->save();
+
         return redirect()->route('carros.index');
     }
 
