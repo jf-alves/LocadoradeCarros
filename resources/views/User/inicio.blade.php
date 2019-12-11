@@ -16,7 +16,7 @@
                     <p>Cor: {{ $carro->cor }}</p>
                     <p>Ano: {{ $carro->ano }}</p>
                     <p>Quantidade disponível: {{ $carro->qtCarro }}</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Alugar</a></p>
+                    <p><a href="{{ route('users.create') }}" class="btn btn-primary" role="button">Alugar</a></p>
                 </div>
                 </div>
             </div>

@@ -74,22 +74,6 @@
   </div>
 
 
-<div class="container">
-<div class="col-md-6">
-    <div class="form-group">
-        <label>Upload Image</label>
-        <div class="input-group">
-            <span class="input-group-btn">
-                <span class="btn btn-default btn-file">
-                    Browse… <input type="file" id="imgInp">
-                </span>
-            </span>
-            <input type="text" class="form-control" readonly>
-        </div>
-        <img id='img-upload'/>
-    </div>
-</div>
-</div>
     
   <a href="{{route('carros.index')}}" class="btn btn-default"><i class="fas fa-reply"></i> Voltar</a>
   <button type="submit" class="btn btn-success">

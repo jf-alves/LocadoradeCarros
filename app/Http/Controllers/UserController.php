@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Carro;
+use App\Carro;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -29,6 +28,7 @@ class UserController extends Controller
       return view('user.inicio', compact("carros"));
     }
 
+
     /**
      * Show the application dashboard.
      *
@@ -36,7 +36,9 @@ class UserController extends Controller
      */
     public function create()
     {
-      //return view('carro.create');
+      $carros = Carro::all();
+
+      return view('user.dados', compact("carros"));
     }
 
     /**
@@ -47,11 +49,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-      /*
-        Carro::create($request->all());
+      Usuario::create($request->all());
 
-        return redirect()->route('carros.index');
-        */
+      return redirect()->route('users.index');
+
     }
 
     /**

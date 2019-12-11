@@ -166,16 +166,19 @@ return [
                 [
                     'text' => 'Usuários',
                     'icon' => 'fas fa-fw fa-users',
+                    //'can'  => 'perfil_update',
                 ],
                 [
                     'text' => 'Papéis',
                     'icon' => 'fas fa-fw fa fa-list-alt',
                     'route' => 'roles.index',
+                    //'can'  => 'role_update',
                 ],
                 [
                     'text' => 'Permissões',
                     'icon' => 'fas fa-fw fa fa-check',
                     'route' => 'permissions.index',
+                    //'can'  => 'permission_update',
                 ],
             ],
         ],
