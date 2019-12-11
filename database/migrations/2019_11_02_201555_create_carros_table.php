@@ -20,7 +20,7 @@ class CreateCarrosTable extends Migration
             $table->string('cor', 50);
             $table->string('qtPorta', 1);
             $table->string('ano', 4);
-            $table->string('foto',100)->nullable();
+            $table->binary('foto',100)->nullable();
             $table->string('qtCarro', 2);
             $table->timestamps();
         });

@@ -2,17 +2,17 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Lista de Carros')
+@section('title', 'Lista de Papéis')
 
 @section('content_header')
 
 <div class="panel panel-default">
 
 <div class="panel-heading clearfix">
-    Carros diponiveis
+    Papéis
     <div class="pull-right">
-        <a href="{{ route('carros.index') }}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
-        <a href="{{ route('carros.create') }}" class="btn btn-sucess"><i class="fas fa-plus"></i> Inserir um novo registro</a>
+        <a href="{{ route('roles.index') }}" class="btn btn-info"><i class="fas fa-sync"></i> Atualizar a tela</a>
+        <a href="{{ route('roles.create') }}" class="btn btn-sucess"><i class="fas fa-plus"></i> Inserir um novo registro</a>
     </div>
 </div>
 <div class="panel-body">
@@ -20,38 +20,31 @@
         <thead>
             <tr>
                 <td>ID</td>
-                <td>Marca</td>
-                <td>Modelo</td>
-                <td>Cor</td>
-                <td>Portas</td>
-                <td>Ano</td>
-                <td>Quantidade</td>
+                <td>Nome</td>
+                <td>Display nome</td>
+                <td>Descrição</td>
             </tr>
         </thead>
       
         <tbody>
-            @foreach($carros as $carro)
+            @foreach($roles as $role)
                 <tr>
-                    <td>{{ $carro->id }}</td>
-                    <td>{{ $carro->marca }}</td>
-                    <td>{{ $carro->modelo }}</td>
-                    <td>{{ $carro->cor }}</td>
-                    <td>{{ $carro->qtPorta }}</td>
-                    <td>{{ $carro->ano }}</td>
-                    <td>{{ $carro->foto }}</td>
-                    <td>{{ $carro->qtCarro }}</td>
+                    <td>{{ $role->id }}</td>
+                    <td>{{ $role->name }}</td>
+                    <td>{{ $role->display_name }}</td>
+                    <td>{{ $role->description }}</td>
                     <td>
 
                         <!--Botão de detalhe do registro  -->
-                        <a href="{{ route('carros.show', $carro->id) }}" class="btn btn-xs btn-primary">
+                        <a href="{{ route('roles.show', $role->id) }}" class="btn btn-xs btn-primary">
                             <i class="fas fa-fx fa-eye"></i>
                         </a>
                         <!--Botão de edição do registro  -->
-                        <a href="{{ route('carros.edit', $carro->id) }}" class="btn btn-xs btn-warning">
+                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-xs btn-warning">
                             <i class="fas fa-fx fa-pencil-alt"></i>
                         </a>
                         <!--Botão de exclusão do registro  -->
-                        <form action="{{ route('carros.destroy', $carro) }}" method="post" 
+                        <form action="{{ route('roles.destroy', $role) }}" method="post" 
                         onsubmit="return confirm('Você tem certeza de' +
                         'que quer excluir este registro?');" 
                         style="display: inline-block">

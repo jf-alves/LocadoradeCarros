@@ -1,10 +1,12 @@
+{{-- resources/views/admin/dashboard.blade.php --}}
+
 @extends('adminlte::page')
 
-@section('title', 'Início')
+@section('title', 'Lista de Carros')
 
 @section('content_header')
-    {{--
-    @foreach($carros as $carro)
+
+  @foreach($carros as $carro)
         <div class="col">
             <div class="col-sm-5 col-md-3">
                 <div class="thumbnail">
@@ -20,9 +22,17 @@
             </div>
         </div>
     @endforeach
-    --}}
+
 @stop
 
 @section('content')
-    
+  
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
 @stop

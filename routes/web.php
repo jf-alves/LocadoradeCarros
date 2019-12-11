@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Route::resource('carros','CarroController');
 
+Route::resource('users','UserController');
+
+Route::resource('roles','RoleController');
+
+Route::resource('permissions','PermissionController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

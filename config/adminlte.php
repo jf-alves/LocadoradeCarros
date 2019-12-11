@@ -132,18 +132,18 @@ return [
     'menu' => [
         ['header' => 'main_navigation'],
         [
+            'text'        => 'Início',
+            'icon'        => 'fa fa-fw fa-home',
+            'route'       => 'users.index',
+        ],
+        [
             'text'        => 'Carros',
             'icon'        => 'fa fa-fw fa-car',
             'submenu' => [
                 [
                     'text' => 'Listar Carros',
                     'icon' => 'fa fa-fw fa-list',
-                    'route' => 'carros.index',
-                ],
-                [
-                    'text' => 'Incluir Carro',
-                    'icon' => 'fa fa-fw fa-plus',
-                    'route' => 'carros.create',
+                    'route' => 'carros.index'
                 ],
             ],
         ],
@@ -157,6 +157,27 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ],
+        ['header' => 'Administrador'],
+        [
+            'text' => 'Administrador',
+            'icon' => 'fas fa-fw fa-cogs',
+            'submenu' => [
+                [
+                    'text' => 'Usuários',
+                    'icon' => 'fas fa-fw fa-users',
+                ],
+                [
+                    'text' => 'Papéis',
+                    'icon' => 'fas fa-fw fa fa-list-alt',
+                    'route' => 'roles.index',
+                ],
+                [
+                    'text' => 'Permissões',
+                    'icon' => 'fas fa-fw fa fa-check',
+                    'route' => 'permissions.index',
+                ],
+            ],
         ],
     ],
     /*
